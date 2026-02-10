@@ -2,8 +2,8 @@
 
 #let cover(
   title: "",
-  degree: "",
-  program: "",
+  subject: "",
+  subject_description: "",
   author: "",
 ) = {
   set page(
@@ -15,30 +15,27 @@
   set text(
     font: fonts.body, 
     size: 12pt, 
-    lang: "en"
   )
   
   set par(leading: 1em)
 
   
   // --- Cover ---
-  v(1cm)
-  align(center, image("../figures/tum_logo.png", width: 26%))
+  align(center, text(font: fonts.sans, 2em, weight: 700,   " ĐẠI HỌC BÁCH KHOA HÀ NỘI"))
 
-  v(5mm)
-  align(center, text(font: fonts.sans, 2em, weight: 700, "Technical University of Munich"))
+  align(center, text(font: fonts.sans, 1.5em, weight: 100,   " Trường Công nghệ Thông tin và Truyền thông \n ------------ 🏵 ------------"))
 
-  v(5mm)
-  align(center, text(font: fonts.sans, 1.5em, weight: 100, "School of Computation, Information and Technology \n -- Informatics --"))
-  
   v(15mm)
+  align(center, image("../figures/hust_logo.svg", width: 26%))
 
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, degree + "’s Thesis in " + program))
-  v(15mm)
-  
-
+  v(10mm)
   align(center, text(font: fonts.sans, 2em, weight: 700, title))
   
   v(10mm)
+  align(center, text(font: fonts.sans, 1.8em, weight: 100, subject))
+
+  align(center, text(font: fonts.sans, 1.5em, weight: 100, subject_description))
+  
+  v(15mm)
   align(center, text(font: fonts.sans, 2em, weight: 500, author))
 }

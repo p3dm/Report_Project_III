@@ -2,18 +2,13 @@
 
 #let titlepage(
   title: "",
-  titleGerman: "",
-  degree: "",
-  program: "",
+  subject: "",
+  subject_description: "",
   supervisor: "",
   advisors: (),
   author: "",
-  startDate: datetime,
-  submissionDate: datetime,
+  submissionDate: "",
 ) = {
-  // Quality checks
-  assert(degree in ("Bachelor", "Master"), message: "The degree must be either 'Bachelor' or 'Master'")
-  
   set page(
     margin: (left: 20mm, right: 20mm, top: 30mm, bottom: 30mm),
     numbering: none,
@@ -23,44 +18,39 @@
   set text(
     font: fonts.body, 
     size: 12pt, 
-    lang: "en"
   )
 
   set par(leading: 0.5em)
 
   
   // --- Title Page ---
-  v(1cm)
-  align(center, image("/figures/tum_logo.png", width: 26%))
+  align(center, text(font: fonts.sans, 2em, weight: 700,   " ĐẠI HỌC BÁCH KHOA HÀ NỘI"))
 
-  v(5mm)
-  align(center, text(font: fonts.sans, 2em, weight: 700, "Technical University of Munich"))
+  align(center, text(font: fonts.sans, 1.5em, weight: 100,   " Trường Công nghệ Thông tin và Truyền thông"))
+  align(center, text(font: fonts.sans, 1.5em, weight: 700,   " ------------ 🏵 ------------"))
 
-  v(5mm)
-  align(center, text(font: fonts.sans, 1.5em, weight: 100, "School of Computation, Information and Technology \n -- Informatics --"))
-  
-  v(15mm)
-
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, degree + "’s Thesis in " + program))
   v(8mm)
-  
+  align(center, image("../figures/hust_logo.svg", width: 20%))
 
+  v(6mm)
   align(center, text(font: fonts.sans, 2em, weight: 700, title))
-  
 
-  align(center, text(font: fonts.sans, 2em, weight: 500, titleGerman))
+  align(center, text(font: fonts.sans, 1.8em, weight: 100, subject + ": " +  subject_description))
 
+  v(4mm)
+  align(center, image("../figures/book.svg", width: 35%))
+
+  v(4mm)
   let entries = ()
-  entries.push(("Author: ", author))
-  entries.push(("Supervisor: ", supervisor))
+  entries.push(("Họ và tên: ", author))
+  entries.push(("Mã số sinh viên: ", "20225361"))
+  entries.push(("Mã lớp: ", "755578"))
+  entries.push(("Giảng viên hướng dẫn: ", supervisor))
   // Only show advisors if there are any
   if advisors.len() > 0 {
-    entries.push(("Advisors: ", advisors.join(", ")))
+    entries.push(("Giáo viên hướng dẫn: ", advisors.join(", ")))
   }
-  entries.push(("Start Date: ", startDate.display("[day].[month].[year]")))
-  entries.push(("Submission Date: ", submissionDate.display("[day].[month].[year]")))
 
-  v(1cm)
   align(
     center,
     grid(
@@ -72,4 +62,7 @@
       }
     )
   )
+
+  v(3mm)
+  align(center, "Hà Nội")
 }

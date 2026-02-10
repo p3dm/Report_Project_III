@@ -7,8 +7,8 @@
 #show: proposal.with(
   title: titleEnglish,
   titleGerman: titleGerman,
-  degree: degree,
-  program: program,
+  degree: subject,
+  program: subject_desc,
   supervisor: supervisor,
   advisors: advisors,
   author: author,

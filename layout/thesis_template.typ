@@ -2,7 +2,6 @@
 #import "/layout/titlepage.typ": *
 #import "/layout/disclaimer.typ": *
 #import "/layout/acknowledgement.typ": acknowledgement as acknowledgement_layout
-#import "/layout/transparency_ai_tools.typ": transparency_ai_tools as transparency_ai_tools_layout
 #import "/layout/abstract.typ": *
 #import "/utils/print_page_break.typ": *
 #import "/layout/fonts.typ": *
@@ -10,60 +9,53 @@
 
 #let thesis(
   title: "",
-  titleGerman: "",
-  degree: "",
-  program: "",
+  subject: "",
+  subject_description: "",
   supervisor: "",
   advisors: (),
   author: "",
-  startDate: datetime,
-  submissionDate: datetime,
-  abstract_en: "",
-  abstract_de: "",
+  submissionDate: "",
+  abstract: "",
   acknowledgement: "",
-  transparency_ai_tools: "",
   is_print: false,
   body,
 ) = {
-  cover(
-    title: title,
-    degree: degree,
-    program: program,
-    author: author,
-  )
+  // cover(
+  //   title: title,
+  //   subject: subject,
+  //   subject_description: subject_description,
+  //   author: author,
+  // )
 
-  pagebreak()
+  // pagebreak()
 
   titlepage(
     title: title,
-    titleGerman: titleGerman,
-    degree: degree,
-    program: program,
+    subject: subject,
+    subject_description: subject_description,
     supervisor: supervisor,
     advisors: advisors,
     author: author,
-    startDate: startDate,
-    submissionDate: submissionDate
+    submissionDate: submissionDate,
   )
 
-  print_page_break(print: is_print, to: "even")
+  // print_page_break(print: is_print, to: "even")
 
-  disclaimer(
-    title: title,
-    degree: degree,
-    author: author,
-    submissionDate: submissionDate
-  )
-  transparency_ai_tools_layout(transparency_ai_tools)
+  // disclaimer(
+  //   title: title,
+  //   subject: subject,
+  //   subject_description: subject_description,
+  //   author: author,
+  // )
 
-  print_page_break(print: is_print)
+  // print_page_break(print: is_print)
   
-  acknowledgement_layout(acknowledgement)
+  // acknowledgement_layout(acknowledgement)
 
   print_page_break(print: is_print)
 
-  abstract(lang: "en")[#abstract_en]
-  abstract(lang: "de")[#abstract_de]
+  // abstract(lang: "en")[#abstract]
+
 
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
@@ -80,6 +72,8 @@
   show math.equation: set text(weight: 400)
 
   // --- Headings ---
+
+
   show heading: set block(below: 0.85em, above: 1.75em)
   show heading: set text(font: fonts.body)
   set heading(numbering: "1.1")
@@ -93,21 +87,29 @@
           el.numbering,
           ..counter(heading).at(el.location())
         )]
-      )
+      ) 
     } else {
       it
     }
   }
-
+  
   // --- Paragraphs ---
   set par(leading: 1em)
 
   // --- Citations ---
-  set cite(style: "alphanumeric")
+  set cite(style: "/layout/cite.cls")
 
   // --- Figures ---
   show figure: set text(size: 0.85em)
-  
+
+  show figure.caption: c => {
+    let supplement = if c.kind == image { "Hình" } else if c.kind == table { "Bảng" } else { c.supplement }
+    context [
+      #supplement #counter(figure).display(c.numbering):
+      #c.body
+    ]
+  }
+
   // --- Table of Contents ---
   show outline.entry.where(level: 1): it => {
     v(15pt, weak: true)
@@ -115,16 +117,15 @@
   }
   outline(
     title: {
-      text(font: fonts.body, 1.5em, weight: 700, "Contents")
+      text(font: fonts.body, 1.5em, weight: 700, "Mục lục")
       v(15mm)
     },
-    indent: 2em
+    indent: 2em,
+    depth: 2
   )
-  
   
   v(2.4fr)
   pagebreak()
-
 
     // Main body. Reset page numbering.
   set page(numbering: "1")
@@ -135,14 +136,24 @@
 
   // List of figures.
   pagebreak()
-  heading(numbering: none)[List of Figures]
+  heading(numbering: none)[Danh mục hình ảnh]
   show outline: it => { // Show only the short caption here
     in-outline.update(true)
     it
     in-outline.update(false)
   }
+  show outline.entry.where(level: 1): it => {
+    if it.element != none and it.element.func() == figure and it.element.kind == image {
+      link(it.element.location(), it.indented(
+        context [Hình #counter(figure.where(kind: image)).at(it.element.location()).first()],
+        it.inner()
+      ))
+    } else {
+      it
+    }
+  }
   outline(
-    title:"",
+    title: "",
     target: figure.where(kind: image),
   )
 
@@ -150,7 +161,17 @@
   context[
     #if query(figure.where(kind: table)).len() > 0 {
       pagebreak()
-      heading(numbering: none)[List of Tables]
+      heading(numbering: none)[Danh mục Bảng biểu]
+      show outline.entry.where(level: 1): it => {
+        if it.element != none and it.element.func() == figure and it.element.kind == table {
+          link(it.element.location(), it.indented(
+            context [Bảng #counter(figure.where(kind: table)).at(it.element.location()).first()],
+            it.inner()
+          ))
+        } else {
+          it
+        }
+      }
       outline(
         title: "",
         target: figure.where(kind: table)
@@ -159,10 +180,10 @@
   ]
 
   // Appendix.
-  pagebreak()
-  heading(numbering: none)[Appendix A: Supplementary Material]
-  include("/layout/appendix.typ")
+  // pagebreak()
+  // heading(numbering: none)[Phụ lục]
+  // include("/layout/appendix.typ")
 
   pagebreak()
-  bibliography("/thesis.yml")
+  bibliography(title: "Tài liệu tham khảo", "/thesis.yml", full: true)
 }

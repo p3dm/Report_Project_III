@@ -1,16 +1,33 @@
-bruegge2004object:
-  type: book
-  title: Object Oriented Software Engineering Using UML, Patterns, and Java
+silverbaq2019socketserver:
+  type: web
+  title: "A simple socket-server written in Kotlin"
   author:
-    - Bruegge, Bernd
-    - Dutoit, Allen H
-  date: 2009
-  publisher: Prentice Hall
+    - Silverbaq
+  date: 2019
+  url: https://gist.github.com/Silverbaq/a14fe6b3ec57703e8cc1a63b59605876
 
-mustermann2020design:
-  type: thesis
-  title: "Design and Implementation of a Scalable Microservice Architecture"
-  author: Max Mustermann
-  genre: Master Thesis
-  publisher: Technical University of Munich
-  date: 2020 
+guedmioui2024camerax:
+  type: video
+  title: "Build a Clean Architecture Camera App with CameraX - (Android)"
+  author:
+    - Guedmioui, Ahmed
+  date: 2024
+  month: "March 27"
+  platform: "YouTube"
+  url: https://www.youtube.com/watch?v=F1yKQ6EOTXc
+
+android2024camera:
+  type: web
+  title: "Làm quen với máy ảnh trên Android"
+  author:
+    - "Android Developers"
+  publisher: "Android Developers"
+  url: https://developer.android.com/media/camera/get-started-with-camera?hl=vi
+
+android2024camerax:
+  type: web
+  title: "Tổng quan về CameraX"
+  author:
+    - "Android Developers"
+  publisher: "Android Developers"
+  url: https://developer.android.com/media/camera/camerax?hl=vi

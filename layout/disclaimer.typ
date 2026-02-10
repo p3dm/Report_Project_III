@@ -2,9 +2,9 @@
 
 #let disclaimer(
   title: "",
-  degree: "",
+  subject: "",
+  subject_description: "",
   author: "",
-  submissionDate: datetime,
 ) = {
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
@@ -23,12 +23,12 @@
   
   // --- Disclaimer ---  
   v(75%)
-  text("I confirm that this " + degree + "’s thesis is my own work and I have documented all sources and material used.")
+  text("I confirm that this " + subject + "’s thesis is my own work and I have documented all sources and material used.")
 
   v(15mm)
-  grid(
-      columns: 2,
-      gutter: 1fr,
-      "Munich, " + submissionDate.display("[day].[month].[year]"), author
-  )
+  // grid(
+  //     columns: 2,
+  //     gutter: 1fr,
+  //     "Munich, " + datetime.now().display("[day].[month].[year]"), author
+  // )
 }
