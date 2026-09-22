@@ -1,4 +1,4 @@
 #let fonts = (
-  body: "New Computer Modern",
-  sans: "New Computer Modern",
+  body: "Times New Roman",
+  sans: "Times New Roman",
 )

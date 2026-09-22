@@ -6,28 +6,30 @@
 #show: thesis.with(
   title: title,
   subject: subject,
-  subject_description: subject_description,
   supervisor: supervisor,
   advisors: advisors,
   author: author,
+  email: email,
+  major: major,
   submissionDate: submissionDate,
-  abstract: include "/content/abstract_en.typ",
+  abstract_content: include "/content/abstract_de.typ",
+  background_content: include "/content/background.typ",
+
   acknowledgement: include "/content/acknowledgement.typ",
 )
 
 #set par(justify: true)
 
+
 #include "/content/introduction.typ"
+#pagebreak()
+#include "/content/acknowledgement.typ"
 #pagebreak()
 #include "/content/data_preprocessing.typ"
 #pagebreak()
 #include "/content/model_architecture.typ"
 #pagebreak()
-#include "/content/model_implementation.typ"
-#pagebreak()
 #include "/content/model_evaluation.typ"
-#pagebreak()
-#include "/content/debug_test.typ"
 #pagebreak()
 #include "/content/conclusion.typ"
 // #include "/content/background.typ"

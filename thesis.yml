@@ -1,33 +1,175 @@
-silverbaq2019socketserver:
-  type: web
-  title: "A simple socket-server written in Kotlin"
+1:
+  type: article
+  title: "Automatic Identification of Vietnamese Singer Voices Using Deep Learning and Data Augmentation"
+  page-range: "337-352"
+  volume: 2
   author:
-    - Silverbaq
+    - "Le Thuy D.T"
+    - "Thanh L.X"
+    - "Loan T.V"
+    - "Thanh C.B"
+  date: 2023
+  url: "https://doi.org/10.1007/978-3-031-50818-9_27"
+  parent:
+    - type: proceedings
+      title: "Advances in Information and Communication Technology"
+    - type: conference
+      title: "Proceedings of the 2nd International Conference ICTA"
+
+2:
+  type: article
+  title: "Deep Learning Approach for Singer Voice Classification of Vietnamese Popular Music"
+  author:
+    - "TP Van"
+    - "NTN Quang"
+    - "TM Thanh"
+  date: 2022
+  url: "https://doi.org/10.1145/3368926.3369700"
+
+3:
+  type: article
+  title: "Long Short-Term Memory Networks: A Comprehensive Survey"
+  author:
+    - "Moez Krichen"
+    - "Alaeddine Mihoub"
+  date: 2025
+  url: "https://doi.org/10.3390/ai6090215"
+
+4:
+  type: article
+  title: "Spectrogram Features for Audio and Speech Analysis"
+  author:
+    - "Ian McLoughlin"
+    - "Lam Pham"
+    - "Yan Song"
+    - "Xiaoxiao Miao"
+    - "Huy Phan"
+  date: 2026
+  url: "https://doi.org/10.3390/app16020572"
+
+5:
+  type: manuscript
+  title: "Intelligent audio mastering"
+  author:
+    - "A. P. Hinksman"
+  date: 2022
+  url: "https://www.researchgate.net/publication/344127327_Intelligent_audio_mastering"
+
+6:
+  type: article
+  title: "Comparative Analysis and Validation of LSTM and GRU Models"
+  author:
+    - "Tae-Yun Kim"
+    - "Hong-Sik Yun"
+    - "Hyung-Mi Yoon"
+    - "Seung-Jun Lee"
+  date: 2025
+  url: "https://doi.org/10.3390/app152011067"
+
+7:
+  type: article
+  title: "An Analysis of the Effect of Data Augmentation Methods: Experiments for a Musical Genre Classification Task"
+  author:
+    - "R. Mignot"
+    - "G. Peeters"
   date: 2019
-  url: https://gist.github.com/Silverbaq/a14fe6b3ec57703e8cc1a63b59605876
+  url: "https://doi.org/10.5334/tismir.26"
 
-guedmioui2024camerax:
-  type: video
-  title: "Build a Clean Architecture Camera App with CameraX - (Android)"
+8:
+  type: article
+  title: "Audio Data Augmentation with respect to Musical Instrument Recognition"
+  author: [Siddharth Bhardwaj]
+  date:
+  url: "https://doi.org/10.5281/zenodo.1066136"
+
+9:
+  type: article
+  title: "A Survey of Data Augmentation for Audio Classification"
   author:
-    - Guedmioui, Ahmed
+    - "Lucas Ferreira-Paiva"
+    - "Elizabeth Alfaro-Espinoza"
+    - "Vinicius M. Almeida"
+    - "Leonardo B. Felix"
+    - "Rodolpho V. A. Neves"
+  date:
+  url: "https://doi.org/10.20906/CBA2022/3469"
+
+10:
+  type: article
+  title: "A Survey of Data Augmentation for Audio Classification"
+  author: [Rameel Sethi]
+  date: 2018
+  url: "https://doi.org/10.7939/R3M32NS1W"
+
+11:
+  type: article
+  title: "Content-based Music Audio Recommendation"
+  author:
+    - Pedro Cano
+    - Markus Koppenberger
+    - Nicolas Wack
+  date: 2005
+  url: "https://doi.org/10.1145/1101149.1101181"
+
+12:
+  type: article
+  title: "Content-based Music Audio Recommendation"
+  author:
+    - Kainat Iqbal
+    - Naif Almudawi
+    - Ahmad Jalal
+    - Jeongmin Park
+    - Asaad Algarni
+    - Bayan Alabdullah
   date: 2024
-  month: "March 27"
-  platform: "YouTube"
-  url: https://www.youtube.com/watch?v=F1yKQ6EOTXc
+  url: "https://doi.org/10.1109/ACCESS.2024.3471895"
 
-android2024camera:
-  type: web
-  title: "Làm quen với máy ảnh trên Android"
+13:
+  type: article
+  title: "A survey on long short-term memory networks for time series prediction"
   author:
-    - "Android Developers"
-  publisher: "Android Developers"
-  url: https://developer.android.com/media/camera/get-started-with-camera?hl=vi
+    - Benjamin Lindemann
+    - Timo Müller
+    - Hannes Vietz
+    - Nasser Jazdi
+    - Michael Weyrich
+  date: 2021
+  url: "https://doi.org/10.1016/j.procir.2021.03.088"
 
-android2024camerax:
-  type: web
-  title: "Tổng quan về CameraX"
+14:
+  type: article
+  title: "A Survey of Audio Classification Using Deep Learning"
   author:
-    - "Android Developers"
-  publisher: "Android Developers"
-  url: https://developer.android.com/media/camera/camerax?hl=vi
+    - Khalid Zaman
+    - Melike Sah
+    - Cem Direkoglu
+    - Masashi Unoki
+  date: 2023
+  url: "https://doi.org/10.1109/ACCESS.2023.3318015"
+
+15:
+  type: article
+  title: "A Survey of Audio Classification Using Deep Learning"
+  author:
+    - Rui Lu
+    - Zhiyao Duan
+  date: 2023
+  url: "https://api.semanticscholar.org/CorpusID:209452474"
+
+16:
+  type: article
+  title: "A Survey of Audio Classification Using Deep Learning"
+  author:
+    - Harshwardhan Yadav
+    - Param Shah
+    - Neel Gandhi
+  date: 2023
+  url: "https://doi.org/10.3390/math11061365"
+
+17:
+  type: article
+  title: "Cough sound detection from raw waveform using SincNet and bidirectional GRU"
+  author:
+    - Roneel V. Sharan
+  date: 2023
+  url: "https://doi.org/10.1016/j.bspc.2023.104580"

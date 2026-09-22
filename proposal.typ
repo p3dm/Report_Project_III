@@ -12,6 +12,8 @@
   supervisor: supervisor,
   advisors: advisors,
   author: author,
+  email: email,
+  major: major,
   startDate: startDate,
   submissionDate: submissionDate,
   transparency_ai_tools: include "/content/proposal/transparency_ai_tools.typ",

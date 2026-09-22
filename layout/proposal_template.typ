@@ -14,6 +14,8 @@
   supervisor: "",
   advisors: (),
   author: "",
+  email: "",
+  major: "",
   startDate: datetime,
   submissionDate: datetime,
   transparency_ai_tools: "",
@@ -22,14 +24,14 @@
 ) = {
   titlepage(
     title: title,
-    titleGerman: titleGerman,
-    degree: degree,
-    program: program,
+    subject: subject,
+    subject_description: subject_description,
     supervisor: supervisor,
     advisors: advisors,
     author: author,
-    startDate: startDate,
-    submissionDate: submissionDate
+    email: email,
+    major: major,
+    submissionDate: submissionDate,
   )
 
   print_page_break(print: is_print)
@@ -43,9 +45,9 @@
 
   // Set body font family.
   set text(
-    font: fonts.body, 
-    size: 12pt, 
-    lang: "en"
+    font: fonts.body,
+    size: 12pt,
+    lang: "en",
   )
 
   show math.equation: set text(weight: 400)

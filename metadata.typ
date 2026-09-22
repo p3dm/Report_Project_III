@@ -1,8 +1,9 @@
 // Enter your thesis data here:
-#let title = "Báo cáo Project 3"
-#let subject = "Đề tài"
-#let subject_description = "Lập trình ứng dụng android cho hệ thống điều khiển camera từ xa"
-#let supervisor = "ThS. Lê Bá Vui"
+#let title = "Định danh tự động giọng một số ca sĩ         Việt Nam đương đại"
+#let subject = "ĐỒ ÁN TỐT NGHIỆP"
+#let email = "manh.pd225361@sis.hust.edu.vn"
+#let major = "Kỹ thuật máy tính"
+#let supervisor = "PGS.TS. Trịnh Văn Loan"
 #let advisors = ()
 #let author = "Phạm Đức Mạnh"
 // #let birthdate = datetime(day: 01, month: 01, year: 2002) // only necessary for registration certificate

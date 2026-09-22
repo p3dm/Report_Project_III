@@ -1,1 +1,10 @@
-Note: Insert the German translation of the English abstract here.
+#align(center, text(size: 2em, weight: "bold")[Tóm tắt])
+
+#set par(justify: true, first-line-indent: 1.2cm)
+
+Âm nhạc trên không gian số ngày càng trở nên phổ biến, đặc biệt với giới trẻ. Sự phát triển của các nền tảng trực tuyến như Spotify, YouTube Music và Apple Music không chỉ giúp người dùng tiếp cận âm nhạc dễ dàng mọi lúc, mọi nơi mà còn đặt ra yêu cầu cấp thiết về quản lý và truy xuất thông tin bài hát hiệu quả. Bên cạnh các dữ liệu cơ bản như tên bài hát, album, nghệ sĩ hay thể loại, khả năng tự động định danh ca sĩ qua giọng hát đóng vai trò quan trọng trong việc hỗ trợ người dùng tìm kiếm và khám phá âm nhạc. Đây là một bài toán kết hợp giữa xử lý tín hiệu âm thanh và học máy, học sâu nhằm phân loại ca sĩ dựa trên một đoạn nhạc ngắn. Tuy nhiên, khó khăn lớn nhất trong thực tế là các đoạn nhạc thường bị trộn lẫn với tạp âm, nhạc nền và nhiều loại nhạc cụ, khiến việc đưa trực tiếp âm thanh thô vào mô hình nhận diện là bất khả thi.
+
+Để giải quyết vấn đề này, đồ án tập trung xây dựng quy trình từ thu thập, xử lý dữ liệu đến huấn luyện và đánh giá mô hình. Cụ thể, dữ liệu âm thanh được khai thác từ các nền tảng số, sau đó trải qua quá trình tiền xử lý và trích xuất đặc trưng dưới dạng phổ Mel. Đồ án đề xuất áp dụng các kiến trúc mạng học sâu chuyên xử lý chuỗi dữ liệu là mạng nơ-ron hồi quy có cổng (GRU) và mạng bộ nhớ ngắn hạn dài (LSTM). Ngoài ra, các cơ chế hỗ trợ và chuẩn hóa cũng được kết hợp nhằm tăng cường khả năng khái quát, giúp mô hình hạn chế tình trạng quá khớp và tránh suy giảm hiệu năng.
+
+Kết quả thực nghiệm cho thấy mô hình Gated Recurrent Units (GRU) mang lại độ chính xác toàn diện và vượt trội hơn so với Long short-term memory (LSTM). Mặc dù vậy, do sự mất cân bằng trong bộ dữ liệu thu thập và tính chất phức tạp của các yếu tố kỹ thuật trong bài nhạc, hiệu năng nhận diện vẫn chưa đạt mức tối ưu và hiện tượng quá khớp dữ liệu nghiêm trọng vẫn còn xảy ra. Những kết quả này sẽ là cơ sở quan trọng để tiếp tục nghiên cứu, cải tiến phương pháp xử lý dữ liệu và tối ưu hoá mô hình.
+
